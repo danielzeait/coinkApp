@@ -47,35 +47,35 @@ ionic serve
 
 Construir la aplicación de Android con Ionic y Capacitor en 4 sencillos pasos:
 
-Ejecutar el comando de construction de Ionic:
+1.  Ejecutar el comando de construction de Ionic:
 
-```
-ionic build
-```
+    ```
+    ionic build
+    ```
 
-Añadir la plataforma de Android en el proyecto:
+2.  Añadir la plataforma de Android en el proyecto:
 
-```
-ionic capacitor add android
-```
+    ```
+    ionic capacitor add android
+    ```
 
-Crear una replica de Android para Capacitor:
+3.  Crear una replica de Android para Capacitor:
 
-```
-ionic capacitor copy android
-```
+    ```
+    ionic capacitor copy android
+    ```
 
-Navegar a la carpeta de aplicación de Android:
+    Navegar a la carpeta de aplicación de Android:
 
-```
-cd android
-```
+    ```
+    cd android
+    ```
 
-Dentro de la aplicación de Android ejecutar el siguiente comando para construir el archivo apk:
+4.  Dentro de la aplicación de Android ejecutar el siguiente comando para construir el archivo apk:
 
-```
-.\gradlew assembleDebug
-```
+    ```
+    .\gradlew assembleDebug
+    ```
 
 Finalmente el archivo de aplicación de Android se ha creado y se puede conseguir en:
 Android/app/build/outputs/apk/debug/app-debug.apk
