@@ -80,7 +80,7 @@ Construir la aplicación de Android con Ionic y Capacitor en 4 sencillos pasos:
     Finalmente el archivo de aplicación de Android se ha creado y se puede conseguir en:
     Android/app/build/outputs/apk/debug/app-debug.apk
 
-    > Nota: Para efectos de la prueba de Coink puedes conseguir mi archivo .apk en la raíz del proyecto dentro del directorio "apk"
+    > Nota: Para efectos de la prueba de Coink se puede conseguir mi archivo .apk en la raíz del proyecto dentro del directorio "apk"
 
 
 ### Testing 
