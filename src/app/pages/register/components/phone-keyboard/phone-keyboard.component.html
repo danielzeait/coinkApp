@@ -1,0 +1,33 @@
+<div class="phone-card">
+  @if (phoneNumber().length > 0) {
+    <p class="phone-number">{{ phoneNumber().join('') }} </p>
+  }@else {
+    <p class="phone-placeholder">{{ phonePlaceholder }} </p>
+  }
+</div>
+<ion-grid>
+  <ion-row>
+    @for (key of keyBoard; track key; let i = $index, last = $last) {
+      <ion-col size="4" size-md="4" size-lg="4" class="ion-text-center">
+        @if (!last && key.keyType !== 'del') {
+          <ion-button fill="clear" (click)="addPhoneDigits(key.value)">
+            <p class="text-xbig text-light" >{{ key.value }}</p>
+          </ion-button>
+        }
+        @if (key.keyType === 'del') {
+          <ion-button fill="clear" disabled="{{ phoneNumber().length === 0 }}" (click)="deletePhoneDigits()">
+            <img 
+              sizes="(max-width: 76px) 76px,44px" 
+              alt="Backspace button in keyboard" 
+              src="../../../../assets/imgs/backspace.svg">
+          </ion-button>
+        }
+        @if (last) {
+          <ion-button fill="clear" disabled="{{ phoneNumber().length < 10 }}" (click)="complete()">
+            <ion-icon slot="icon-only" color="{{ phoneNumber().length < 10 ? 'medium' : 'light' }}" name="checkmark-circle"></ion-icon>
+          </ion-button>
+        }
+      </ion-col>
+    }
+  </ion-row>
+</ion-grid>

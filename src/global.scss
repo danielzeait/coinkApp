@@ -24,3 +24,160 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+@import './theme/variables.scss';
+
+
+// :root {
+//     --ion-color-dark: #004B40;
+//     --ion-color-light: #1EEA00;
+// }
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+a,
+label,
+button,
+select,
+option,
+td,
+.table-header,
+.table-content,
+tr,
+th,
+input,
+ion-button, ion-text, ion-label, ion-input, ion-select, ion-select-option, ion-list, ion-radio{
+  font-family: $regularFontFamily;
+}
+
+
+// TEXT STYLES
+
+.text-big {
+    font-size: $bigTextFontSize;
+}
+
+.text-xbig {
+    font-size: $xBigTextFontSize;
+}
+
+.text-regular {
+    font-size: $regularTextFontSize;
+}
+
+.text-light {
+    font-family: $lightFontFamily;
+}
+
+.text-bold {
+    font-family: $boldFontFamily;
+}
+
+// BUTTONS
+
+ion-button{
+    font-size: $regularTextFontSize;
+    height: 66.666666px;
+}
+
+//POP OVER
+
+.my-popover{
+    background-color: rgba($color: #fff, $alpha: 0);
+}
+
+.my-popover::part(content) {
+    border-radius: 6px;
+    border: none;
+    box-shadow: 0px 0px 4px 4px rgba(200, 200, 200, 0.6);
+}
+
+.my-popover::part(arrow) {
+    width: 0;
+}
+
+//DATE TIME BUTTON 
+ion-datetime-button::part(native) {
+    background: transparent;
+    width: 100%;
+    border-radius: 0;
+    text-align: left;
+}
+
+// MODAL 
+ion-modal {
+    --width: fit-content;
+    --min-width: 250px;
+    --height: fit-content;
+    --border-radius: 6px;
+    --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+}
+
+ion-modal#welcome-modal::part(content) {
+    width: 75%;
+    --height: 55%;
+}
+
+#loader-modal{
+    background:rgba(0, 65, 54, 0.95);
+}
+
+ion-modal#loader-modal::part(content) {
+    background: none;
+    border: none;
+    box-shadow: none;
+    color: #fff;
+}
+
+  
+
+// DATETIME
+ion-datetime{
+    background: unset;
+}
+
+// LABELS
+.label-text{
+    color: #aaaaaa;
+    font-size: 18px;
+}
+
+.label-text-wrapper{
+    margin-bottom: 10px;
+}
+
+.label-text-wrapper .sc-ion-input-ios {
+    transform: scale(1);
+}
+
+//SELECT 
+ion-select::part(label){
+    color: #aaaaaa;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+//CHECKBOX
+ion-checkbox{
+    --checkbox-background-checked: #1EEB00;
+}
+
+ion-checkbox::part(container) {
+    border: 1px solid #1EEA00;
+  }
+
+
+// CUSTOM STYLE
+
+.bottom-container{
+    align-self: end;
+    padding: 42.666666px 33.333333px;
+    display: grid;
+    row-gap: 2vh;
+}

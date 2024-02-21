@@ -1,0 +1,27 @@
+ion-thumbnail {
+    --size:96px;
+    width: auto;
+    margin-top: 0;
+}
+
+ion-item{
+    margin-top: 2vh;
+    padding-bottom: 3vh;
+    border-bottom: 1.25px solid #1EEA00;
+}
+
+ion-label{
+    padding-left: 15px;
+    margin-top: 0;
+    ion-text{
+        h1{
+            font-size: 21px;
+            margin-bottom: 1.5vh;
+            font-family: montserrat-bold;
+        }
+    }
+}
+
+.text-regular{
+    font-family: avenir-55;
+}

@@ -1,0 +1,21 @@
+<ion-content [fullscreen]="true">
+  @if (openFinishModal) {
+    <ion-modal id="welcome-modal" [canDismiss]="canDismiss" [isOpen]="openFinishModal" [keepContentsMounted]="true"
+      [enterAnimation]="enterAnimation" [leaveAnimation]="leaveAnimation">
+      <ng-template>
+        <app-welcome-card (modalClose)="resetFlow()"/>
+      </ng-template>
+  </ion-modal>
+  }@else if(!registerDone){
+  <app-navigation-bar [stepImage]="'../../assets/imgs/stepper-3.svg'" [title]="'FINALIZAR'"/>
+    <section id="container">
+      <app-step-info 
+        [stepImg]="'../../assets/imgs/oink-3.svg'"
+        [stepTitle]="'ESTAS MUY CERCA DE SER PARTE DE COINK.'"
+        [stepInfo]="'Solo es necesario que leas detenidamente el contrato que se encuentra al final de esta pantalla y lo aceptes.'"/>
+    </section>
+    <section>
+      <app-terms-and-conditions (termsAgree)="finishRegister()"/>
+    </section>
+  }
+</ion-content>

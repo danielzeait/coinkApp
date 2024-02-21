@@ -1,0 +1,40 @@
+#registerForm {
+    padding: 0 24px 21.35px 24px;
+}
+
+.text-regular{
+    margin: 15px 0 25px 0;
+}
+
+ion-input, ion-select{
+    color: #212121;
+    font-size: 18px;
+    font-family: avenir-65;
+}
+
+.customInput{
+    --background: #373737;
+    --color: #fff;
+    --letter-spacing: 4px;
+}
+
+ion-item{
+    margin-bottom: 10px;
+    --padding-bottom: 5px;
+}
+
+.item-danger{
+    --border-color: red;
+}
+
+.input-button{
+    height: auto;
+    font-size: 14px;
+    position: absolute;
+    right: 10px;
+    bottom: 0px;
+    z-index: 99;
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+}

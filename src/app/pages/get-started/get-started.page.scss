@@ -1,0 +1,30 @@
+#container {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 100%;
+  display: grid;
+
+  a{
+    text-decoration: none;
+    color: unset;
+  }
+
+}
+
+ion-img{
+  width: 160px;
+  height: 200px;
+}
+
+.upper-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 4vh 0;
+  row-gap: 4vh;
+}

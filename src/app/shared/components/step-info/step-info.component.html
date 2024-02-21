@@ -1,0 +1,16 @@
+<ion-item lines="none">
+  <ion-thumbnail slot="start">
+    <img alt="Oink placeholder image" [src]="stepImg" />
+  </ion-thumbnail>
+  <ion-label>
+    @if (stepTitle){
+      <ion-text color="dark" class="text-bold"> <h1> {{ stepTitle }} </h1> </ion-text>
+    }
+    <p>
+      <ion-text class="text-regular" color="medium">
+        {{ stepInfo }} <strong> {{ stepStrongInfo }}</strong>
+      </ion-text>
+    </p>
+  </ion-label>
+
+</ion-item>

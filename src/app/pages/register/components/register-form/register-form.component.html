@@ -1,0 +1,123 @@
+<form [formGroup]="registerForm" style="display: grid;" id="registerForm">
+  <ion-text color="dark" class="text-bold text-regular"> Documento de identidad </ion-text>
+  
+  <ion-item lines="full">
+    <ion-select toggleIcon="caret-down" expandedIcon="caret-up" label="Tipo de documento" label-placement="floating"
+      id="documentType" type="text" formControlName="documentType" aria-label="Document Type" interface="popover"
+      [interfaceOptions]="{ cssClass: 'my-popover' }">
+      @for (document of documentOptions; track $index) {
+      <ion-select-option [value]="document.notation">{{ document.description }}</ion-select-option>
+      }
+    </ion-select>
+  </ion-item>
+
+  <ion-item lines="full">
+    <ion-input label="Número de documento" labelPlacement="floating" id="documentNumber" type="tel" maxlength="10"
+      formControlName="documentNumber" ngDefaultControl>
+    </ion-input>
+  </ion-item>
+
+  <ion-item lines="full">
+    <ion-input label="Fecha de expedición del documento" formControlName="documentExpedition" labelPlacement="floating"
+      (click)="openDocDateModal = true">
+    </ion-input>
+    <ion-modal (didDismiss)="openDocDateModal = false" [isOpen]="openDocDateModal" [keepContentsMounted]="true"
+      [enterAnimation]="enterAnimation" [leaveAnimation]="leaveAnimation">
+      <ng-template>
+        <ion-datetime id="documentExpedition" type="date" color="light" presentation="date" [showDefaultButtons]="true"
+          (ionChange)="updateDocumentDate($event)" [max]="todayDate">
+        </ion-datetime>
+      </ng-template>
+    </ion-modal>
+  </ion-item>
+
+  <ion-item lines="full">
+    <ion-input label="Fecha de nacimiento" formControlName="birthDate" labelPlacement="floating"
+    (click)="openBirthDateModal = true">
+    </ion-input>
+    <ion-modal  (didDismiss)="openBirthDateModal = false" [isOpen]="openBirthDateModal" [keepContentsMounted]="true"
+      [enterAnimation]="enterAnimation" [leaveAnimation]="leaveAnimation">
+      <ng-template>
+        <ion-datetime id="birthDate" type="date" color="light" presentation="date" [showDefaultButtons]="true"
+          (ionChange)="updateBdayDate($event)" [min]="minDate" [max]="maxDate">
+        </ion-datetime>
+      </ng-template>
+    </ion-modal>
+  </ion-item>
+
+  <ion-item lines="full">
+    <ion-select toggleIcon="caret-down" expandedIcon="caret-up" label="Género" label-placement="floating" id="gender"
+      type="text" formControlName="gender" aria-label="Gender" interface="popover"
+      [interfaceOptions]="{ cssClass: 'my-popover' }">
+      @for (gender of genderOptions; track $index) {
+      <ion-select-option [value]="gender.name">{{ gender.description }}</ion-select-option>
+      }
+    </ion-select>
+  </ion-item>
+
+  <ion-text color="dark" class="text-bold text-regular mt-10"> Configura tu cuenta </ion-text>
+
+  <ion-item lines="full"
+    [class.item-danger]="registerForm.controls['email'].dirty && !registerForm.controls['email'].valid">
+    <ion-input label="Correo electrónico" labelPlacement="floating" id="email" type="email" formControlName="email"
+      ngDefaultControl>
+    </ion-input>
+    <ion-button *ngIf="registerForm.controls['email'].dirty && registerForm.controls['email'].valid" fill="clear"
+      disabled class="input-button" color="light" aria-label="Show/hide">
+      <ion-icon slot="icon-only" [name]="'checkmark'" aria-hidden="true"></ion-icon>
+    </ion-button>
+  </ion-item>
+  <app-error-message *ngIf="registerForm.controls['email'].dirty && !registerForm.controls['email'].valid"
+    [errorText]="'El correo ingresado es inválido'" />
+
+  <ion-item lines="full" [class.item-danger]="(registerForm.controls['confirmEmail'].dirty && !registerForm.controls['confirmEmail'].valid) || 
+    (registerForm.controls['confirmEmail'].dirty && registerForm.errors?.['EmailNoMatch'])">
+    <ion-input label="Confirmar correo electrónico" labelPlacement="floating" id="confirmEmail" type="email"
+      formControlName="confirmEmail" ngDefaultControl>
+    </ion-input>
+    <ion-button
+      *ngIf="registerForm.controls['confirmEmail'].dirty && registerForm.controls['confirmEmail'].valid && !registerForm.errors?.['EmailNoMatch']"
+      fill="clear" disabled class="input-button" color="light" aria-label="Show/hide">
+      <ion-icon slot="icon-only" [name]="'checkmark-done'" aria-hidden="true"></ion-icon>
+    </ion-button>
+  </ion-item>
+  <app-error-message *ngIf="registerForm.controls['confirmEmail'].dirty && !registerForm.controls['confirmEmail'].valid"
+    [errorText]="'El correo de confirmación es inválido'" />
+  <app-error-message
+    *ngIf="registerForm.controls['confirmEmail'].dirty && registerForm.controls['confirmEmail'].valid && registerForm.errors?.['EmailNoMatch']"
+    [errorText]="'El correo de confirmación no coincide'" />
+
+  <ion-item lines="full">
+    <ion-input label="PIN de seguridad" labelPlacement="floating" id="password" formControlName="password"
+      [type]="passwordType" ngDefaultControl>
+    </ion-input>
+    <ion-button fill="clear" class="input-button" color="dark" aria-label="Show/hide" (click)="togglePasswordType()">
+      <ion-icon slot="icon-only" [name]="passwordType === 'password' ? 'eye' : 'eye-off'" aria-hidden="true"></ion-icon>
+    </ion-button>
+  </ion-item>
+  <app-error-message *ngIf="registerForm.controls['password'].dirty && !registerForm.controls['password'].valid"
+    [errorText]="'El PIN ingresado no es válido'" />
+
+  <ion-item lines="full">
+    <ion-input label="Confirmar PIN de seguridad" labelPlacement="floating" id="confirmPassword"
+      formControlName="confirmPassword" [type]="confirmPasswordType" ngDefaultControl>
+    </ion-input>
+    <ion-button fill="clear" class="input-button" color="dark" aria-label="Show/hide"
+      (click)="toggleConfirmPasswordType()">
+      <ion-icon slot="icon-only" [name]="confirmPasswordType === 'password' ? 'eye' : 'eye-off'"
+        aria-hidden="true"></ion-icon>
+    </ion-button>
+  </ion-item>
+  <app-error-message
+    *ngIf="registerForm.controls['confirmPassword'].dirty && !registerForm.controls['confirmPassword'].valid"
+    [errorText]="'El PIN ingresado no es válido'" />
+  <app-error-message
+    *ngIf="registerForm.controls['confirmPassword'].dirty && registerForm.controls['confirmPassword'].valid && registerForm.errors?.['PasswordNoMatch']"
+    [errorText]="'Este campo no coincide con el PIN'" />
+
+  <div class="bottom-container">
+    <ion-button shape="round" [disabled]="!registerForm.valid" color="light" expand="full" class="text-bold"
+      (click)="completeForm()">SIGUIENTE</ion-button>
+  </div>
+
+</form>

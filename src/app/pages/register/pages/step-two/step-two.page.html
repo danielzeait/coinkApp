@@ -1,0 +1,14 @@
+<app-navigation-bar [stepImage]="'../../assets/imgs/stepper-2.svg'" [title]="'DATOS DE CUENTA'"/>
+
+<ion-content [fullscreen]="true">
+  <section id="container">
+    <app-step-info 
+      [stepImg]="'../../assets/imgs/oink-2.svg'"
+      [stepTitle]="'¿CUÁLES SON TUS DATOS?'"
+      [stepInfo]="'Ahora necesitamos saber algunos datos tuyos'"/>
+  </section>
+
+  <section>
+    <app-register-form (continueNext)="continue()"/>
+  </section>
+</ion-content>

@@ -1,6 +1,39 @@
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/theming/
 
+@font-face {
+  font-family: montserrat;
+  src: url(../assets/fonts/montserrat.regular.ttf) format("opentype");
+}
+
+@font-face {
+  font-family: montserrat-light;
+  src: url(../assets/fonts/montserrat-light.ttf) format("opentype");
+}
+
+@font-face {
+  font-family: "montserrat-bold";
+  src: url(../assets/fonts/montserrat.bold.ttf) format("opentype");
+}
+
+@font-face {
+  font-family: "avenir-55";
+  src: url(../assets/fonts/avenir-55.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "avenir-65";
+  src: url(../assets/fonts/avenir-65.otf) format("opentype");
+}
+
+/** Cutom variables **/
+$xBigTextFontSize:42px;
+$bigTextFontSize:24px;
+$regularTextFontSize:21px;
+$regularFontFamily:montserrat;
+$boldFontFamily:montserrat-bold;
+$lightFontFamily:montserrat-light;
+
 /** Ionic CSS Variables **/
 :root {
   /** primary **/
@@ -44,7 +77,7 @@
   --ion-color-warning-tint: #ffca22;
 
   /** danger **/
-  --ion-color-danger: #eb445a;
+  --ion-color-danger: #FF0000;
   --ion-color-danger-rgb: 235, 68, 90;
   --ion-color-danger-contrast: #ffffff;
   --ion-color-danger-contrast-rgb: 255, 255, 255;
@@ -52,12 +85,12 @@
   --ion-color-danger-tint: #ed576b;
 
   /** dark **/
-  --ion-color-dark: #222428;
+  --ion-color-dark: #004B40;
   --ion-color-dark-rgb: 34, 36, 40;
   --ion-color-dark-contrast: #ffffff;
   --ion-color-dark-contrast-rgb: 255, 255, 255;
-  --ion-color-dark-shade: #1e2023;
-  --ion-color-dark-tint: #383a3e;
+  --ion-color-dark-shade: #002c25;
+  --ion-color-dark-tint: #18473f;
 
   /** medium **/
   --ion-color-medium: #92949c;
@@ -68,12 +101,12 @@
   --ion-color-medium-tint: #9d9fa6;
 
   /** light **/
-  --ion-color-light: #f4f5f8;
+  --ion-color-light: #1EEA00;
   --ion-color-light-rgb: 244, 245, 248;
   --ion-color-light-contrast: #000000;
   --ion-color-light-contrast-rgb: 0, 0, 0;
-  --ion-color-light-shade: #d7d8da;
-  --ion-color-light-tint: #f5f6f9;
+  --ion-color-light-shade: #42c22e;
+  --ion-color-light-tint: #70ca62;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -132,7 +165,7 @@
     --ion-color-dark-shade: #d7d8da;
     --ion-color-dark-tint: #f5f6f9;
 
-    --ion-color-medium: #989aa2;
+    --ion-color-medium: #757575;
     --ion-color-medium-rgb: 152,154,162;
     --ion-color-medium-contrast: #000000;
     --ion-color-medium-contrast-rgb: 0,0,0;

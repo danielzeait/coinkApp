@@ -1,0 +1,17 @@
+<ion-content [fullscreen]="true">
+  <section id="container">
+    <div class="upper-container">
+      <ion-img
+        src="../../assets/imgs/firstPageImage.svg"
+        alt="The Wisconsin State Capitol building in Madison, WI at night">
+      </ion-img>
+      <ion-text color="light" class="text-big text-bold">LA ALCANCÍA QUE SIEMPRE <br> TE ACOMPAÑA</ion-text>
+    </div>
+    <div class="bottom-container">
+      <a [routerLink]="'/register'" (click)="resetData()">
+        <ion-button shape="round" color="light" expand="full" class="text-bold" >REGÍSTRATE</ion-button>
+      </a>
+      <ion-button shape="round" color="dark" expand="full">INGRESA</ion-button>
+    </div>
+  </section>
+</ion-content>

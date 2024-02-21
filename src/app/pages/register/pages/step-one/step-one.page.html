@@ -1,0 +1,13 @@
+<app-navigation-bar [stepImage]="'../../assets/imgs/stepper-1.svg'" [title]="'NÚMERO CELULAR'"/>
+
+<ion-content [fullscreen]="true">
+  <section id="container">
+    <app-step-info
+      [stepStrongInfo]="'número celular.'" 
+      [stepImg]="'../../assets/imgs/oink.svg'"
+      [stepInfo]="'Para comenzar, por favor ingresa tu'"/>
+  </section>
+  <section>
+    <app-phone-keyboard (continueNext)="continue()"></app-phone-keyboard>
+  </section>
+</ion-content>
