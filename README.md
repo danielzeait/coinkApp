@@ -20,9 +20,9 @@ Aplicación en Ionic utilizando la API de Coink que simula un registro exitoso e
 ### Ejecuta la aplicación localmente
 
 Clonar el repositorio de Git:
-
-git clone [https://github.com/danielzeait/coinkApp.git](https://github.com/danielzeait/coinkApp.git)
-    
+```
+git clone https://github.com/danielzeait/coinkApp.git
+```
 
 Instalar dependencias del package.json :
 
